@@ -1,0 +1,18 @@
+syntax = "proto3";
+package main;
+
+option go_package = "github.com/vvwind/links_shortener;links_shortener";
+
+service DataService {
+   rpc shorten (OriginalURL) returns (NewURL);
+   rpc reveal (NewURL) returns (OriginalURL);
+}
+message OriginalURL {
+   //!< Keeps a value1.
+   string Body = 1;
+
+}
+message NewURL {
+
+   string Body = 1;
+}
